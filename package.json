@@ -1,0 +1,7 @@
+{
+  "name": "fixpoint-site",
+  "private": true,
+  "scripts": { "build": "node build.js" },
+  "dependencies": { "jsdom": "^26.1.0" },
+  "engines": { "node": ">=20" }
+}
