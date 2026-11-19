@@ -1,0 +1,612 @@
+{
+  "phone": "+41 77 259 7140",
+  "places": [
+    "Balzers",
+    "Triesen",
+    "Triesenberg",
+    "Vaduz",
+    "Schaan",
+    "Planken",
+    "Eschen / Nendeln",
+    "Mauren",
+    "Schellenberg",
+    "Gamprin",
+    "Ruggell",
+    "Sargans (CH)",
+    "Buchs SG (CH)"
+  ],
+  "fix": {
+    "screen": [
+      "Display",
+      "Screen"
+    ],
+    "battery": [
+      "Akku",
+      "Battery"
+    ],
+    "port": [
+      "Ladebuchse",
+      "Charging port"
+    ],
+    "cam": [
+      "Kamera",
+      "Camera"
+    ],
+    "water": [
+      "Wasserschaden",
+      "Water damage"
+    ],
+    "sw": [
+      "Software / Viren",
+      "Software / viruses"
+    ],
+    "slow": [
+      "Läuft langsam",
+      "Running slow"
+    ],
+    "data": [
+      "Datenübertragung / Backup",
+      "Data transfer / backup"
+    ],
+    "boot": [
+      "Startet nicht",
+      "Won’t turn on"
+    ],
+    "heat": [
+      "Überhitzung / Lüfter",
+      "Overheating / fan"
+    ],
+    "key": [
+      "Tastatur",
+      "Keyboard"
+    ],
+    "other": [
+      "Anderes Problem",
+      "Other problem"
+    ]
+  },
+  "devices": {
+    "phone": {
+      "l": [
+        "Handy",
+        "Phone"
+      ],
+      "f": [
+        "screen",
+        "battery",
+        "port",
+        "cam",
+        "water",
+        "sw",
+        "data",
+        "other"
+      ],
+      "b": {
+        "iPhone": [
+          "iPhone 18 Pro / Max",
+          "iPhone Duo",
+          "iPhone 17 / 17e / Air",
+          "iPhone 17 Pro / Max",
+          "iPhone 16 Serie",
+          "iPhone 15 Serie",
+          "iPhone 14 Serie",
+          "iPhone 13 Serie",
+          "iPhone 12 Serie",
+          "iPhone 11 Serie",
+          "iPhone SE",
+          "iPhone X / XS / XR"
+        ],
+        "Samsung": [
+          "Galaxy S25 Serie",
+          "Galaxy S24 Serie",
+          "Galaxy S23 Serie",
+          "Galaxy A56 / A55",
+          "Galaxy A35 / A25",
+          "Galaxy Z Flip",
+          "Galaxy Z Fold"
+        ],
+        "Xiaomi": [
+          "Xiaomi 15",
+          "Xiaomi 14",
+          "Redmi Note 14",
+          "Redmi Note 13",
+          "Poco F / X"
+        ],
+        "Huawei": [
+          "Pura 70",
+          "P60",
+          "Nova"
+        ],
+        "Google Pixel": [
+          "Pixel 10",
+          "Pixel 9",
+          "Pixel 8",
+          "Pixel 7"
+        ],
+        "Andere / Other": []
+      }
+    },
+    "tablet": {
+      "l": [
+        "Tablet",
+        "Tablet"
+      ],
+      "f": [
+        "screen",
+        "battery",
+        "port",
+        "water",
+        "sw",
+        "data",
+        "other"
+      ],
+      "b": {
+        "iPad": [
+          "iPad Pro",
+          "iPad Air",
+          "iPad (Standard)",
+          "iPad mini"
+        ],
+        "Samsung Galaxy Tab": [
+          "Tab S Serie",
+          "Tab A Serie"
+        ],
+        "Lenovo": [],
+        "Huawei": [],
+        "Andere / Other": []
+      }
+    },
+    "laptop": {
+      "l": [
+        "Laptop",
+        "Laptop"
+      ],
+      "f": [
+        "screen",
+        "battery",
+        "key",
+        "heat",
+        "slow",
+        "sw",
+        "data",
+        "boot",
+        "other"
+      ],
+      "b": {
+        "MacBook": [
+          "MacBook Air (M1–M4)",
+          "MacBook Pro 13\"",
+          "MacBook Pro 14\"",
+          "MacBook Pro 16\"",
+          "Intel MacBook"
+        ],
+        "Lenovo": [
+          "ThinkPad T / X",
+          "ThinkPad E",
+          "IdeaPad",
+          "Legion"
+        ],
+        "HP": [
+          "Pavilion",
+          "EliteBook / ProBook",
+          "Envy / Spectre",
+          "Omen"
+        ],
+        "Dell": [
+          "XPS",
+          "Latitude",
+          "Inspiron",
+          "Alienware"
+        ],
+        "Asus": [
+          "ZenBook",
+          "VivoBook",
+          "ROG / TUF"
+        ],
+        "Acer": [
+          "Aspire",
+          "Swift",
+          "Nitro / Predator"
+        ],
+        "Andere / Other": []
+      }
+    },
+    "pc": {
+      "l": [
+        "PC",
+        "Desktop PC"
+      ],
+      "f": [
+        "slow",
+        "sw",
+        "heat",
+        "data",
+        "boot",
+        "other"
+      ],
+      "b": {
+        "Desktop-PC": [],
+        "Gaming-PC": [],
+        "iMac / Mac mini": [],
+        "Mini-PC": [],
+        "Andere / Other": []
+      }
+    }
+  },
+  "T": {
+    "de": {
+      "nav1": "Leistungen",
+      "nav2": "Gerät wählen",
+      "nav3": "Preise",
+      "cta": "Termin anfragen",
+      "eyebrow": "Handy · Laptop · PC · Liechtenstein & Umgebung",
+      "h1a": "Wir reparieren dein Gerät –",
+      "h1b": "direkt bei dir zu Hause.",
+      "sub": "Kein Weg in die Stadt, keine Wartezeit im Laden. Wir kommen zu dir, holen dein Gerät ab oder helfen per Fernwartung. Klare Preise vorab.",
+      "heroA": "Gerät wählen & anfragen",
+      "heroB": "Jetzt anrufen",
+      "tkStatus": "Techniker unterwegs",
+      "tkEx": "Beispiel",
+      "ticket": [
+        {
+          "a": "Gerät",
+          "b": "iPhone 15 Serie"
+        },
+        {
+          "a": "Problem",
+          "b": "Display"
+        },
+        {
+          "a": "Termin",
+          "b": "Morgen, 17:30 · bei dir"
+        }
+      ],
+      "bens": [
+        {
+          "a": "Hausbesuch",
+          "b": "Wir kommen zu dir nach Hause oder ins Büro."
+        },
+        {
+          "a": "Abhol- & Bringservice",
+          "b": "Gerät abholen lassen, repariert zurückbekommen."
+        },
+        {
+          "a": "Fernhilfe online",
+          "b": "Software-Probleme direkt per Fernwartung lösen."
+        },
+        {
+          "a": "Preis vorab",
+          "b": "Du entscheidest, bevor wir reparieren."
+        }
+      ],
+      "pickH": "Welches Gerät möchtest du reparieren lassen?",
+      "pickP": "Wähle Gerät, Marke, Modell und Problem. Du bekommst Termin und Preis, bevor wir anfangen.",
+      "s1": "Gerät",
+      "s2": "Marke",
+      "sM": "Modell (optional)",
+      "s3": "Was soll repariert werden? (mehrere möglich)",
+      "sumH": "Deine Anfrage",
+      "sendWa": "Per WhatsApp senden",
+      "call": "Anrufen",
+      "sumNote": "Der endgültige Preis wird nach Diagnose bestätigt. Du entscheidest dann, ob wir reparieren.",
+      "svcH": "Was wir für dich reparieren",
+      "svc": [
+        {
+          "a": "Handy-Display & Akku",
+          "b": "Gesprungenes Display, schwacher Akku, defekte Ladebuchse. iPhone und Android."
+        },
+        {
+          "a": "Laptop & PC langsam",
+          "b": "Bereinigung, Windows-Neuinstallation, SSD- und RAM-Upgrade für spürbar mehr Tempo."
+        },
+        {
+          "a": "Viren & Malware",
+          "b": "Schadsoftware entfernen, Sicherheit einrichten, Tipps für die Zukunft."
+        },
+        {
+          "a": "Datenübertragung & Backup",
+          "b": "Fotos, Kontakte und Dateien sicher aufs neue Gerät bringen oder dauerhaft sichern."
+        },
+        {
+          "a": "Überhitzung & Lüfter",
+          "b": "Reinigung und neue Wärmeleitpaste, wenn dein Laptop heiss oder laut wird."
+        },
+        {
+          "a": "WLAN, Drucker & E-Mail",
+          "b": "Netzwerk, Drucker und Konten einrichten, zu Hause und im Büro."
+        }
+      ],
+      "stepsH": "So einfach geht es",
+      "steps": [
+        {
+          "n": "01",
+          "a": "Anfrage senden",
+          "b": "Per WhatsApp oder Telefon. Kurz das Problem beschreiben."
+        },
+        {
+          "n": "02",
+          "a": "Termin & Preis",
+          "b": "Wir vereinbaren Hausbesuch oder Abholung und nennen den Preis."
+        },
+        {
+          "n": "03",
+          "a": "Diagnose & Reparatur",
+          "b": "Wir prüfen das Gerät und reparieren erst nach deiner Zustimmung."
+        },
+        {
+          "n": "04",
+          "a": "Übergabe",
+          "b": "Du testest dein Gerät mit uns und bekommst eine Quittung."
+        }
+      ],
+      "priceH": "Transparente Preise",
+      "priceP": "Du kennst den Preis, bevor wir anfangen. Hausbesuche in Liechtenstein sind kostenlos.",
+      "rows": [
+        {
+          "a": "Diagnose (wird bei Reparatur angerechnet)",
+          "b": "CHF 49"
+        },
+        {
+          "a": "Hausbesuch / Anfahrt (Liechtenstein)",
+          "b": "kostenlos"
+        },
+        {
+          "a": "Anfahrt Sargans / Buchs SG",
+          "b": "CHF 25"
+        },
+        {
+          "a": "Handy-Display Austausch (inkl. Teil)",
+          "b": "ab CHF 199"
+        },
+        {
+          "a": "Handy-Akku Austausch (inkl. Teil)",
+          "b": "ab CHF 99"
+        },
+        {
+          "a": "Virenentfernung & Systembereinigung",
+          "b": "ab CHF 119"
+        },
+        {
+          "a": "Windows-Neuinstallation",
+          "b": "ab CHF 99"
+        },
+        {
+          "a": "Datenübertragung / Backup",
+          "b": "ab CHF 79"
+        },
+        {
+          "a": "SSD- / RAM-Upgrade (Arbeit)",
+          "b": "ab CHF 89"
+        },
+        {
+          "a": "Fernhilfe online (30 Min.)",
+          "b": "CHF 89"
+        },
+        {
+          "a": "Express-Zuschlag",
+          "b": "ab CHF 49"
+        }
+      ],
+      "priceNote": "Richtpreise, abhängig von Modell und Teil (neuere iPhones und Premium-Displays kosten mehr). Der Preis wird vor der Reparatur verbindlich genannt.",
+      "areaH": "Wo wir unterwegs sind",
+      "areaP": "Hausbesuche in ganz Liechtenstein sowie in Sargans, Buchs SG und Umgebung. Andere Orte auf Anfrage, Fernhilfe ist überall möglich.",
+      "faqH": "Häufige Fragen",
+      "faq": [
+        {
+          "a": "Sind meine Daten sicher?",
+          "b": "Wir schauen nur auf deine Dateien, wenn es für die Reparatur nötig ist, und nur mit deiner Zustimmung."
+        },
+        {
+          "a": "Was passiert mit der Garantie?",
+          "b": "Das Öffnen eines Geräts kann die Herstellergarantie beenden. Wir sagen es dir vorher."
+        },
+        {
+          "a": "Und wenn es sich nicht reparieren lässt?",
+          "b": "Dann zahlst du nur die Diagnose, keine Reparatur. Wir versuchen dann, deine Daten zu retten. Bestellst du auf deinen Wunsch ein Teil vorab, trägst du dessen Kosten."
+        },
+        {
+          "a": "Wann habt ihr Zeit?",
+          "b": "Flexibel: Termine nach Vereinbarung, auch abends und am Wochenende."
+        }
+      ],
+      "contH": "Jetzt Termin anfragen",
+      "contP": "Schreib kurz, was los ist und wo du wohnst. Wir melden uns mit Termin und Preis.",
+      "hours": "Termine nach Vereinbarung, flexibel verfügbar.",
+      "imp": "Impressum",
+      "dp": "Datenschutz",
+      "none": "Bitte wähle Gerät, Marke und Problem.",
+      "lD": "Gerät",
+      "lB": "Marke",
+      "lM": "Modell",
+      "lF": "Problem",
+      "hi": "Hallo, ich möchte eine Reparatur anfragen."
+    },
+    "en": {
+      "nav1": "Services",
+      "nav2": "Pick device",
+      "nav3": "Prices",
+      "cta": "Book a visit",
+      "eyebrow": "Phone · Laptop · PC · Liechtenstein & surroundings",
+      "h1a": "We repair your device –",
+      "h1b": "right at your home.",
+      "sub": "No trip into town, no waiting in a shop. We come to you, pick up your device or help remotely. Clear prices up front.",
+      "heroA": "Choose device & request",
+      "heroB": "Call now",
+      "tkStatus": "Technician on the way",
+      "tkEx": "Example",
+      "ticket": [
+        {
+          "a": "Device",
+          "b": "iPhone 15 series"
+        },
+        {
+          "a": "Problem",
+          "b": "Screen"
+        },
+        {
+          "a": "Appointment",
+          "b": "Tomorrow, 5:30 pm · at yours"
+        }
+      ],
+      "bens": [
+        {
+          "a": "Home visits",
+          "b": "We come to your home or office."
+        },
+        {
+          "a": "Pickup & delivery",
+          "b": "We collect your device and bring it back repaired."
+        },
+        {
+          "a": "Remote help online",
+          "b": "Fix software problems straight over remote support."
+        },
+        {
+          "a": "Price up front",
+          "b": "You decide before we start repairing."
+        }
+      ],
+      "pickH": "Which device needs repairing?",
+      "pickP": "Choose device, brand, model and problem. You get a date and a price before we start.",
+      "s1": "Device",
+      "s2": "Brand",
+      "sM": "Model (optional)",
+      "s3": "What needs fixing? (select several)",
+      "sumH": "Your request",
+      "sendWa": "Send via WhatsApp",
+      "call": "Call",
+      "sumNote": "The final price is confirmed after diagnosis. You then decide whether we repair.",
+      "svcH": "What we repair",
+      "svc": [
+        {
+          "a": "Phone screen & battery",
+          "b": "Cracked screen, weak battery, faulty charging port. iPhone and Android."
+        },
+        {
+          "a": "Slow laptop & PC",
+          "b": "Clean-up, Windows reinstall, SSD and RAM upgrades for a real speed boost."
+        },
+        {
+          "a": "Viruses & malware",
+          "b": "Remove malware, set up security and show you how to stay safe."
+        },
+        {
+          "a": "Data transfer & backup",
+          "b": "Move photos, contacts and files to a new device safely, or back them up."
+        },
+        {
+          "a": "Overheating & fan",
+          "b": "Cleaning and new thermal paste if your laptop runs hot or loud."
+        },
+        {
+          "a": "Wi-Fi, printer & email",
+          "b": "Set up network, printer and accounts at home and in the office."
+        }
+      ],
+      "stepsH": "How it works",
+      "steps": [
+        {
+          "n": "01",
+          "a": "Send a request",
+          "b": "By WhatsApp or phone. Describe the problem briefly."
+        },
+        {
+          "n": "02",
+          "a": "Date & price",
+          "b": "We arrange a home visit or pickup and tell you the price."
+        },
+        {
+          "n": "03",
+          "a": "Diagnosis & repair",
+          "b": "We check the device and only repair once you agree."
+        },
+        {
+          "n": "04",
+          "a": "Handover",
+          "b": "You test your device with us and get a receipt."
+        }
+      ],
+      "priceH": "Transparent prices",
+      "priceP": "You know the price before we start. Home visits in Liechtenstein are free.",
+      "rows": [
+        {
+          "a": "Diagnosis (credited if you repair)",
+          "b": "CHF 49"
+        },
+        {
+          "a": "Home visit / travel (Liechtenstein)",
+          "b": "free"
+        },
+        {
+          "a": "Travel to Sargans / Buchs SG",
+          "b": "CHF 25"
+        },
+        {
+          "a": "Phone screen replacement (incl. part)",
+          "b": "from CHF 199"
+        },
+        {
+          "a": "Phone battery replacement (incl. part)",
+          "b": "from CHF 99"
+        },
+        {
+          "a": "Virus removal & system clean-up",
+          "b": "from CHF 119"
+        },
+        {
+          "a": "Windows reinstall",
+          "b": "from CHF 99"
+        },
+        {
+          "a": "Data transfer / backup",
+          "b": "from CHF 79"
+        },
+        {
+          "a": "SSD / RAM upgrade (labour)",
+          "b": "from CHF 89"
+        },
+        {
+          "a": "Remote help online (30 min)",
+          "b": "CHF 89"
+        },
+        {
+          "a": "Express surcharge",
+          "b": "from CHF 49"
+        }
+      ],
+      "priceNote": "Indicative prices that depend on model and part (newer iPhones and premium screens cost more). A binding price is quoted before any repair.",
+      "areaH": "Where we work",
+      "areaP": "Home visits across Liechtenstein and in Sargans, Buchs SG and the surrounding area. Other places on request, remote help works anywhere.",
+      "faqH": "Common questions",
+      "faq": [
+        {
+          "a": "Is my data safe?",
+          "b": "We only look at your files when the repair needs it, and only with your consent."
+        },
+        {
+          "a": "What about my warranty?",
+          "b": "Opening a device can end the manufacturer warranty. We tell you before we start."
+        },
+        {
+          "a": "What if it can’t be repaired?",
+          "b": "You only pay the diagnosis, not a repair. We then try to rescue your data. If you ask us to pre-order a part, you cover its cost."
+        },
+        {
+          "a": "When are you available?",
+          "b": "Flexible: appointments by arrangement, including evenings and weekends."
+        }
+      ],
+      "contH": "Request an appointment",
+      "contP": "Tell us briefly what’s wrong and where you live. We’ll reply with a date and a price.",
+      "hours": "Appointments by arrangement, flexible availability.",
+      "imp": "Imprint",
+      "dp": "Privacy",
+      "none": "Please choose device, brand and problem.",
+      "lD": "Device",
+      "lB": "Brand",
+      "lM": "Model",
+      "lF": "Problem",
+      "hi": "Hello, I would like to request a repair."
+    }
+  }
+}

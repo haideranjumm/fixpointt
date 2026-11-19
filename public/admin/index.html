@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>FixPoint admin</title>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#0A0E14;color:#E8EEF5;font:15px/1.5 Inter,system-ui,sans-serif}
+header{padding:16px 20px;border-bottom:1px solid #1F2B3B;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+h1{font-size:20px;margin:0;flex:1}h3{margin:0 0 10px;font-size:15px;color:#3EE6C3}
+nav{display:flex;gap:8px;padding:12px 20px;flex-wrap:wrap;border-bottom:1px solid #1F2B3B;position:sticky;top:0;background:#0A0E14;z-index:2}
+button{font:inherit;color:#E8EEF5;cursor:pointer;background:#111823;border:1px solid #2A394C;border-radius:8px;padding:9px 14px;min-height:40px}
+button:hover{border-color:#3EE6C3}
+button.on,button.pri{background:#3EE6C3;color:#04211C;border-color:#3EE6C3;font-weight:600}
+button.sm{min-height:32px;padding:4px 10px;margin-top:8px;font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:20px 20px 160px}
+.card{background:#111823;border:1px solid #1F2B3B;border-radius:12px;padding:16px;margin-bottom:14px}
+.sub{border-top:1px solid #1F2B3B;margin-top:12px;padding-top:12px}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.grid2{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-bottom:8px}
+.in{width:100%;background:#0A0E14;color:#E8EEF5;border:1px solid #2A394C;border-radius:8px;padding:10px;font:inherit}
+textarea.in{min-height:64px;resize:vertical}
+small{display:block;color:#9DB0C6;margin-bottom:4px}
+p.hint{color:#9DB0C6;margin:0 0 16px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#0D131C;border-top:1px solid #1F2B3B;padding:12px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.bar .in{max-width:260px}#status{flex:1;min-width:200px}.ok{color:#3EE6C3}.warn{color:#FFC857}.err{color:#FF7A7A}
+</style>
+</head>
+<body>
+<header><h1>FixPoint admin</h1><a href="/" style="color:#3EE6C3">View site</a></header>
+<nav id="tabs"></nav>
+<main id="view"><p>Loading…</p></main>
+<div class="bar">
+<input id="pw" class="in" type="password" placeholder="Admin password" autocomplete="current-password">
+<button class="pri" id="save">Save changes</button>
+<span id="status"></span>
+</div>
+<script>
+let data = null, isDirty = false, tab = 'prices';
+const TABS = { prices: 'Prices', areas: 'Areas', contact: 'Contact', devices: 'Devices & models', texts: 'All texts' };
+const $ = (s) => document.querySelector(s);
+const el = (t, a = {}, ...k) => { const e = document.createElement(t); for (const [x, v] of Object.entries(a)) { if (x === 'class') e.className = v; else if (x.startsWith('on')) e[x] = v; else e.setAttribute(x, v); } k.flat().forEach((c) => e.append(c)); return e; };
+const status = (m, c) => { const s = $('#status'); s.textContent = m; s.className = c || ''; };
+const dirty = () => { isDirty = true; status('Unsaved changes', 'warn'); };
+const bind = (i, get, set) => { i.value = get(); i.addEventListener('input', () => { set(i.value); dirty(); }); return i; };
+const field = (label, node) => el('label', {}, el('small', {}, label), node);
+const text = (obj, key, area) => bind(el(area ? 'textarea' : 'input', { class: 'in' }), () => (obj[key] == null ? '' : obj[key]), (v) => { obj[key] = v; });
+const lines = (get, set) => bind(el('textarea', { class: 'in', rows: '6' }), () => get().join('\n'), (v) => set(v.split('\n').map((s) => s.trim()).filter(Boolean)));
+const rename = (o, a, b) => { const ent = Object.entries(o); Object.keys(o).forEach((k) => delete o[k]); ent.forEach(([k, v]) => { o[k === a ? b : k] = v; }); };
+const clone = (x) => JSON.parse(JSON.stringify(x));
+
+function prices() {
+  const de = data.T.de.rows, en = data.T.en.rows, box = el('div', {}, el('p', { class: 'hint' }, 'Each row is one line in the price table. Type the prices exactly as customers should see them, e.g. "ab CHF 99" and "from CHF 99".'));
+  de.forEach((r, i) => {
+    const e = en[i] || (en[i] = { a: '', b: '' });
+    box.append(el('div', { class: 'card' }, el('div', { class: 'grid' }, field('Service (German)', text(r, 'a')), field('Price (German)', text(r, 'b')), field('Service (English)', text(e, 'a')), field('Price (English)', text(e, 'b'))), el('button', { class: 'sm', onclick: () => { de.splice(i, 1); en.splice(i, 1); dirty(); render(); } }, 'Remove row')));
+  });
+  box.append(el('button', { onclick: () => { de.push({ a: '', b: '' }); en.push({ a: '', b: '' }); dirty(); render(); } }, '+ Add price row'));
+  return box;
+}
+function areas() {
+  return el('div', {}, el('p', { class: 'hint' }, 'One place per line. Shown as the "Where we work" tags.'), el('div', { class: 'card' }, lines(() => data.places, (v) => { data.places = v; })), el('div', { class: 'card' }, el('div', { class: 'grid2' }, field('Intro text (German)', text(data.T.de, 'areaP', true)), field('Intro text (English)', text(data.T.en, 'areaP', true)))));
+}
+function contact() {
+  return el('div', {}, el('p', { class: 'hint' }, 'The phone number is used for the call button, WhatsApp and the footer. Keep the international format.'),
+    el('div', { class: 'card' }, field('Phone / WhatsApp', text(data, 'phone'))),
+    el('div', { class: 'card' }, el('div', { class: 'grid2' }, field('Availability (German)', text(data.T.de, 'hours')), field('Availability (English)', text(data.T.en, 'hours')))));
+}
+function devices() {
+  const box = el('div', {}, el('p', { class: 'hint' }, 'Brands and models shown in the device picker. Leave models empty to skip the model step. Rename a brand by editing its name field.'));
+  for (const [k, d] of Object.entries(data.devices)) {
+    const c = el('div', { class: 'card' }, el('h3', {}, k), el('div', { class: 'grid' },
+      field('Name (German)', bind(el('input', { class: 'in' }), () => d.l[0], (v) => { d.l[0] = v; })),
+      field('Name (English)', bind(el('input', { class: 'in' }), () => d.l[1], (v) => { d.l[1] = v; }))));
+    for (const [b, models] of Object.entries(d.b)) {
+      const nm = el('input', { class: 'in' }); nm.value = b;
+      nm.addEventListener('change', () => { const n = nm.value.trim(); if (n && n !== b && !(n in d.b)) { rename(d.b, b, n); dirty(); } render(); });
+      c.append(el('div', { class: 'sub' }, el('div', { class: 'grid2' }, field('Brand', nm), field('Models (one per line)', lines(() => models, (v) => { d.b[b] = v; }))), el('button', { class: 'sm', onclick: () => { delete d.b[b]; dirty(); render(); } }, 'Remove brand')));
+    }
+    c.append(el('button', { class: 'sm', onclick: () => { let n = 'New brand', i = 2; while (n in d.b) n = 'New brand ' + i++; d.b[n] = []; dirty(); render(); } }, '+ Add brand'));
+    box.append(c);
+  }
+  return box;
+}
+function texts() {
+  const de = data.T.de, en = data.T.en, box = el('div', {}, el('p', { class: 'hint' }, 'Every text on the site, German left and English right. Prices are on the Prices tab.'));
+  for (const k of Object.keys(de)) {
+    if (k === 'rows') continue;
+    const v = de[k];
+    if (typeof v === 'string') {
+      const area = v.length > 70;
+      box.append(el('div', { class: 'card' }, el('h3', {}, k), el('div', { class: 'grid2' }, field('German', text(de, k, area)), field('English', text(en, k, area)))));
+    } else if (Array.isArray(v)) {
+      const c = el('div', { class: 'card' }, el('h3', {}, k));
+      v.forEach((it, i) => {
+        en[k] = en[k] || []; const e = en[k][i] || (en[k][i] = clone(it));
+        const row = el('div', { class: 'sub' });
+        for (const p of Object.keys(it)) { const area = String(it[p]).length > 70; row.append(el('div', { class: 'grid2' }, field(p + ' (German)', text(it, p, area)), field(p + ' (English)', text(e, p, area)))); }
+        row.append(el('button', { class: 'sm', onclick: () => { de[k].splice(i, 1); en[k].splice(i, 1); dirty(); render(); } }, 'Remove'));
+        c.append(row);
+      });
+      c.append(el('button', { class: 'sm', onclick: () => { const blank = Object.fromEntries(Object.keys(v[0] || { a: 1, b: 1 }).map((p) => [p, ''])); de[k].push(clone(blank)); en[k].push(clone(blank)); dirty(); render(); } }, '+ Add item'));
+      box.append(c);
+    }
+  }
+  return box;
+}
+const VIEWS = { prices, areas, contact, devices, texts };
+function render() {
+  const nav = $('#tabs'); nav.textContent = '';
+  for (const [k, l] of Object.entries(TABS)) nav.append(el('button', { class: k === tab ? 'on' : '', onclick: () => { tab = k; render(); } }, l));
+  const v = $('#view'); v.textContent = ''; v.append(VIEWS[tab]());
+}
+async function save() {
+  const pw = $('#pw').value;
+  if (!pw) return status('Enter the admin password first', 'err');
+  status('Saving…');
+  try {
+    const r = await fetch('/api/save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: pw, content: data }) });
+    const j = await r.json().catch(() => ({}));
+    if (r.ok) { isDirty = false; status('Saved. The live site updates in about a minute.', 'ok'); } else status(j.error || 'Error ' + r.status, 'err');
+  } catch (e) { status('Network error, please try again', 'err'); }
+}
+$('#save').onclick = save;
+window.addEventListener('beforeunload', (e) => { if (isDirty) { e.preventDefault(); e.returnValue = ''; } });
+fetch('/content.json', { cache: 'no-store' }).then((r) => r.json()).then((d) => { data = d; render(); }).catch(() => { $('#view').textContent = 'Could not load content.json'; });
+</script>
+</body>
+</html>
