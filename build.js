@@ -2,11 +2,12 @@
 const fs = require('fs'), path = require('path');
 const { JSDOM } = require('jsdom');
 const p = (...a) => path.join(__dirname, ...a);
-const need = ['content.json', 'src/head.html', 'src/template.html', 'src/runtime.js', 'src/content.js', 'public/admin/index.html'];
+const need = ['content.json', 'src/head.html', 'src/template.html', 'src/runtime.js', 'src/content.js', 'src/defaults.json', 'public/admin/index.html'];
 const missing = need.filter((f) => !fs.existsSync(p(f)));
 if (missing.length) { console.error('Missing files: ' + missing.join(', ') + '. Upload them to the repository, keeping the folder names.'); process.exit(1); }
 const r = (f) => fs.readFileSync(p(f), 'utf8');
-const DATA = JSON.parse(r('content.json'));
+const fill = (t, d) => { for (const [k, v] of Object.entries(d)) { if (!(k in t)) t[k] = JSON.parse(JSON.stringify(v)); else if (v && typeof v === 'object' && !Array.isArray(v) && t[k] && typeof t[k] === 'object') fill(t[k], v); } return t; };
+const DATA = fill(JSON.parse(r('content.json')), JSON.parse(r('src/defaults.json')));
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const tel = String(DATA.phone).replace(/[^+\d]/g, '');
 const dataScript = 'const DATA = ' + JSON.stringify(DATA).replace(/</g, '\\u003c') + ';';

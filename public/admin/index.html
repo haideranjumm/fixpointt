@@ -40,7 +40,7 @@ p.hint{color:#9DB0C6;margin:0 0 16px}
 </div>
 <script>
 let data = null, isDirty = false, tab = 'prices';
-const TABS = { prices: 'Prices', areas: 'Areas', contact: 'Contact', devices: 'Devices & models', texts: 'All texts' };
+const TABS = { prices: 'Prices', areas: 'Areas', contact: 'Contact', devices: 'Devices & models', est: 'Price estimates', texts: 'All texts' };
 const $ = (s) => document.querySelector(s);
 const el = (t, a = {}, ...k) => { const e = document.createElement(t); for (const [x, v] of Object.entries(a)) { if (x === 'class') e.className = v; else if (x.startsWith('on')) e[x] = v; else e.setAttribute(x, v); } k.flat().forEach((c) => e.append(c)); return e; };
 const status = (m, c) => { const s = $('#status'); s.textContent = m; s.className = c || ''; };
@@ -108,7 +108,21 @@ function texts() {
   }
   return box;
 }
-const VIEWS = { prices, areas, contact, devices, texts };
+const num = (obj, key) => bind(el('input', { class: 'in', type: 'number', min: '0', step: '1' }), () => (obj[key] == null ? '' : obj[key]), (v) => { obj[key] = v === '' ? 0 : Math.max(0, Math.round(Number(v) || 0)); });
+function est() {
+  data.est = data.est || {};
+  const box = el('div', {}, el('p', { class: 'hint' }, 'Starting prices in CHF for the live estimate meter in the device picker. They are estimates only; the final price is confirmed after diagnosis.'));
+  for (const [k, d] of Object.entries(data.devices)) {
+    data.est[k] = data.est[k] || {};
+    const g = el('div', { class: 'grid' });
+    d.f.forEach((f) => g.append(field((data.fix[f] ? data.fix[f][0] + ' / ' + data.fix[f][1] : f), num(data.est[k], f))));
+    box.append(el('div', { class: 'card' }, el('h3', {}, d.l[0] + ' / ' + d.l[1]), g));
+  }
+  data.est.extra = data.est.extra || {};
+  box.append(el('div', { class: 'card' }, el('h3', {}, 'Extras'), el('div', { class: 'grid' }, field('Travel to Sargans / Buchs SG (CHF)', num(data.est.extra, 'far')), field('Express surcharge (CHF)', num(data.est.extra, 'express')))));
+  return box;
+}
+const VIEWS = { prices, areas, contact, devices, est, texts };
 function render() {
   const nav = $('#tabs'); nav.textContent = '';
   for (const [k, l] of Object.entries(TABS)) nav.append(el('button', { class: k === tab ? 'on' : '', onclick: () => { tab = k; render(); } }, l));

@@ -7,6 +7,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 function check(v, depth = 0) {
   if (depth > 6) throw new Error('Content too deeply nested');
   if (typeof v === 'string') { if (v.length > 1500) throw new Error('A text is too long'); return; }
+  if (typeof v === 'number') { if (!Number.isFinite(v) || v < 0 || v > 100000) throw new Error('A number is out of range'); return; }
   if (Array.isArray(v)) { if (v.length > 200) throw new Error('A list is too long'); v.forEach((x) => check(x, depth + 1)); return; }
   if (v && typeof v === 'object') { Object.entries(v).forEach(([k, x]) => { if (k.length > 120) throw new Error('A key is too long'); check(x, depth + 1); }); return; }
   throw new Error('Only text, lists and objects are allowed');
@@ -17,6 +18,7 @@ function validate(c) {
   if (typeof c.phone !== 'string' || !/^[+\d][\d\s()-]{5,25}$/.test(c.phone)) throw new Error('Phone number looks invalid');
   if (!Array.isArray(c.places) || !c.places.every((p) => typeof p === 'string')) throw new Error('Areas must be a list of names');
   if (!c.T.de || !c.T.en || JSON.stringify(Object.keys(c.T.de).sort()) !== JSON.stringify(Object.keys(c.T.en).sort())) throw new Error('German and English texts must have the same fields');
+  if ('est' in c && (!c.est || typeof c.est !== 'object')) throw new Error('Estimates are invalid');
   for (const d of Object.values(c.devices)) if (!d.l || !d.f || !d.b) throw new Error('A device is incomplete');
   check(c);
   if (JSON.stringify(c).length > 150000) throw new Error('Content too large');

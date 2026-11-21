@@ -15,6 +15,7 @@ Then redeploy once so the variables apply.
 - `content.json` - all data and texts (the admin edits this file; you can also edit it on GitHub)
 - `src/` - page layout, styles and logic. `public/` - legal pages, admin page, robots.txt, sitemap.xml
 - `api/save.js` - the save function (checks the password, validates, commits to GitHub)
+- `src/defaults.json` - built-in defaults (price estimates, a few texts). Anything saved in `content.json` wins over them.
 - `build.js` - builds the site into `dist/`
 
 Keep the folder structure when uploading (drag the folders `api`, `src` and `public` into GitHub's upload page).

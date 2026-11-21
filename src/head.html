@@ -10,7 +10,7 @@
 <link rel="canonical" href="https://fixpoint.li/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0E14'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='%233EE6C3' font-family='Arial' font-weight='700'%3EF%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@600;700&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
 body{margin:0;background:#0A0E14;color:#E8EEF5;font-family:Inter,system-ui,sans-serif}
 a{color:#3EE6C3}
@@ -37,4 +37,28 @@ button{font-family:inherit;color:#E8EEF5;cursor:pointer}
 @keyframes pulse{0%{box-shadow:0 0 0 0 #3EE6C390}100%{box-shadow:0 0 0 12px #3EE6C300}}
 @media(prefers-reduced-motion:reduce){.hero>*,.bar,.dot{animation:none}.card,.dev{transition:none}}
 @media(max-width:760px){.nav a.l{display:none}}
+
+/* hardware look */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.mono,.dev,.tg{font-family:Geist,Inter,system-ui,sans-serif}.mono{font-family:'Geist Mono',ui-monospace,monospace}
+.card,.dev{position:relative}
+.card::before,.dev::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .25s;background:radial-gradient(200px circle at var(--mx,50%) var(--my,0%),#3EE6C320,transparent 65%)}
+.card:hover::before,.dev:hover::before{opacity:1}
+.dev{overflow:hidden;padding:30px 12px 18px;background:linear-gradient(180deg,#18212D,#0E141C);border-color:#243244;box-shadow:inset 0 1px 0 #ffffff14,inset 0 -10px 20px #00000055,0 6px 18px #00000066}
+.led{width:8px;height:8px;border-radius:50%;flex:none;background:#2A3646;transition:background .2s,box-shadow .2s}
+.dev .led{position:absolute;top:12px;left:50%;margin-left:-4px}
+.tg{display:flex;align-items:center;gap:10px;padding:10px 12px 10px 14px;min-height:48px;border-radius:12px;border:1px solid #243244;background:linear-gradient(180deg,#151D28,#0F151D);font-size:15px;text-align:left;transition:border-color .2s,box-shadow .2s}
+.tg:hover{border-color:#3EE6C3}
+.tg .px{font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:#9DB0C6;margin-left:auto}
+.tg .trk{width:38px;height:20px;border-radius:12px;background:#0A0E14;border:1px solid #2A394C;position:relative;flex:none}
+.tg .kn{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:linear-gradient(#DDE6EE,#8FA0B2);transition:transform .25s cubic-bezier(.3,1.5,.5,1)}
+.seg{height:18px;border-radius:3px;background:#18212D;transition:background .3s,box-shadow .3s}
+.mq{overflow:hidden;white-space:nowrap;border-top:1px solid #1F2B3B;padding:16px 0;color:#5F7389;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.mq>div{display:inline-flex;gap:48px;padding-right:48px;animation:mq 45s linear infinite}
+.mq:hover>div{animation-play-state:paused}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:#3EE6C3;display:flex;align-items:center;justify-content:center;z-index:20;animation:ring 2.6s infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes ring{0%{box-shadow:0 6px 24px #3EE6C340,0 0 0 0 #3EE6C380}70%,100%{box-shadow:0 6px 24px #3EE6C340,0 0 0 16px #3EE6C300}}
+@supports (animation-timeline:view()){.sec:not(.hero){animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 30%}}
+@media(prefers-reduced-motion:reduce){.mq>div,.wa,.sec{animation:none!important}.tg .kn,.led,.seg{transition:none}}
 </style>
