@@ -419,7 +419,14 @@
       "lB": "Marke",
       "lM": "Modell",
       "lF": "Problem",
-      "hi": "Hallo, ich möchte eine Reparatur anfragen."
+      "hi": "Hallo, ich möchte eine Reparatur anfragen.",
+      "whereH": "Wo sollen wir hinkommen?",
+      "whereLi": "Liechtenstein (kostenlos)",
+      "whereFar": "Sargans / Buchs SG",
+      "express": "Express (schnellster Termin)",
+      "estH": "Richtpreis",
+      "from": "ab",
+      "lW": "Ort"
     },
     "en": {
       "nav1": "Services",
@@ -606,7 +613,58 @@
       "lB": "Brand",
       "lM": "Model",
       "lF": "Problem",
-      "hi": "Hello, I would like to request a repair."
+      "hi": "Hello, I would like to request a repair.",
+      "whereH": "Where should we come?",
+      "whereLi": "Liechtenstein (free)",
+      "whereFar": "Sargans / Buchs SG",
+      "express": "Express (fastest slot)",
+      "estH": "Estimate",
+      "from": "from",
+      "lW": "Location"
+    }
+  },
+  "est": {
+    "phone": {
+      "screen": 199,
+      "battery": 99,
+      "port": 89,
+      "cam": 99,
+      "water": 119,
+      "sw": 79,
+      "data": 79,
+      "other": 49
+    },
+    "tablet": {
+      "screen": 189,
+      "battery": 119,
+      "port": 99,
+      "water": 129,
+      "sw": 79,
+      "data": 79,
+      "other": 49
+    },
+    "laptop": {
+      "screen": 249,
+      "battery": 139,
+      "key": 149,
+      "heat": 119,
+      "slow": 99,
+      "sw": 119,
+      "data": 79,
+      "boot": 99,
+      "other": 49
+    },
+    "pc": {
+      "slow": 99,
+      "sw": 119,
+      "heat": 99,
+      "data": 79,
+      "boot": 99,
+      "other": 49
+    },
+    "extra": {
+      "far": 25,
+      "express": 49
     }
   }
 }
