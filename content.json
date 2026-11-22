@@ -344,7 +344,7 @@
       "rows": [
         {
           "a": "Diagnose (wird bei Reparatur angerechnet)",
-          "b": "CHF 49"
+          "b": "CHF 29"
         },
         {
           "a": "Hausbesuch / Anfahrt (Liechtenstein)",
@@ -352,39 +352,39 @@
         },
         {
           "a": "Anfahrt Sargans / Buchs SG",
-          "b": "CHF 25"
+          "b": "CHF 20"
         },
         {
           "a": "Handy-Display Austausch (inkl. Teil)",
-          "b": "ab CHF 199"
+          "b": "ab CHF 149"
         },
         {
           "a": "Handy-Akku Austausch (inkl. Teil)",
-          "b": "ab CHF 99"
+          "b": "ab CHF 69"
         },
         {
           "a": "Virenentfernung & Systembereinigung",
-          "b": "ab CHF 119"
-        },
-        {
-          "a": "Windows-Neuinstallation",
-          "b": "ab CHF 99"
-        },
-        {
-          "a": "Datenübertragung / Backup",
           "b": "ab CHF 79"
         },
         {
+          "a": "Windows-Neuinstallation",
+          "b": "ab CHF 69"
+        },
+        {
+          "a": "Datenübertragung / Backup",
+          "b": "ab CHF 49"
+        },
+        {
           "a": "SSD- / RAM-Upgrade (Arbeit)",
-          "b": "ab CHF 89"
+          "b": "ab CHF 59"
         },
         {
           "a": "Fernhilfe online (30 Min.)",
-          "b": "CHF 89"
+          "b": "CHF 49"
         },
         {
           "a": "Express-Zuschlag",
-          "b": "ab CHF 49"
+          "b": "ab CHF 29"
         }
       ],
       "priceNote": "Richtpreise, abhängig von Modell und Teil (neuere iPhones und Premium-Displays kosten mehr). Der Preis wird vor der Reparatur verbindlich genannt.",
@@ -426,7 +426,15 @@
       "express": "Express (schnellster Termin)",
       "estH": "Richtpreis",
       "from": "ab",
-      "lW": "Ort"
+      "lW": "Ort",
+      "hubBase": "Unsere Basis",
+      "heroAlt": "Illustration: Ein Handy mit gesprungenem Display wird repariert",
+      "metaTitle": "Handy & PC Reparatur Liechtenstein – Hausbesuch | FixPoint",
+      "metaDesc": "Handy-, Laptop- und PC-Reparatur mit Hausbesuch in Liechtenstein, Sargans und Buchs SG. Hausbesuch in FL kostenlos, Preis vorab. Jetzt per WhatsApp anfragen.",
+      "ogTitle": "FixPoint – Reparatur direkt bei dir zu Hause",
+      "seoH": "Handy- & Computer-Reparatur in Liechtenstein",
+      "seoP": "FixPoint repariert Handys, Tablets, Laptops und Computer direkt bei dir zu Hause: in Eschen, Vaduz, Schaan, Balzers, Mauren und im ganzen Fürstentum Liechtenstein sowie in Sargans und Buchs SG. Ob gesprungenes Display, schwacher Akku, Wasserschaden, Virenbefall oder langsamer PC: Du erhältst Termin und Preis vorab, und wir erklären dir alles verständlich. Auf Wunsch holen wir dein Gerät ab oder helfen per Fernwartung.",
+      "indep": "FixPoint ist ein unabhängiger Reparaturdienst und nicht mit Apple, Samsung, Google, Huawei, Xiaomi oder anderen Herstellern verbunden. Alle genannten Marken gehören ihren jeweiligen Inhabern. Preise sind Richtpreise und werden vor der Reparatur verbindlich bestätigt."
     },
     "en": {
       "nav1": "Services",
@@ -538,7 +546,7 @@
       "rows": [
         {
           "a": "Diagnosis (credited if you repair)",
-          "b": "CHF 49"
+          "b": "CHF 29"
         },
         {
           "a": "Home visit / travel (Liechtenstein)",
@@ -546,39 +554,39 @@
         },
         {
           "a": "Travel to Sargans / Buchs SG",
-          "b": "CHF 25"
+          "b": "CHF 20"
         },
         {
           "a": "Phone screen replacement (incl. part)",
-          "b": "from CHF 199"
+          "b": "from CHF 149"
         },
         {
           "a": "Phone battery replacement (incl. part)",
-          "b": "from CHF 99"
+          "b": "from CHF 69"
         },
         {
           "a": "Virus removal & system clean-up",
-          "b": "from CHF 119"
-        },
-        {
-          "a": "Windows reinstall",
-          "b": "from CHF 99"
-        },
-        {
-          "a": "Data transfer / backup",
           "b": "from CHF 79"
         },
         {
+          "a": "Windows reinstall",
+          "b": "from CHF 69"
+        },
+        {
+          "a": "Data transfer / backup",
+          "b": "from CHF 49"
+        },
+        {
           "a": "SSD / RAM upgrade (labour)",
-          "b": "from CHF 89"
+          "b": "from CHF 59"
         },
         {
           "a": "Remote help online (30 min)",
-          "b": "CHF 89"
+          "b": "CHF 49"
         },
         {
           "a": "Express surcharge",
-          "b": "from CHF 49"
+          "b": "from CHF 29"
         }
       ],
       "priceNote": "Indicative prices that depend on model and part (newer iPhones and premium screens cost more). A binding price is quoted before any repair.",
@@ -620,51 +628,64 @@
       "express": "Express (fastest slot)",
       "estH": "Estimate",
       "from": "from",
-      "lW": "Location"
+      "lW": "Location",
+      "hubBase": "Our base",
+      "heroAlt": "Illustration: a phone with a cracked screen being repaired",
+      "metaTitle": "Phone & PC Repair Liechtenstein – Home Visits | FixPoint",
+      "metaDesc": "Phone, laptop and PC repair with home visits in Liechtenstein, Sargans and Buchs SG. Free home visits in FL, price up front. Message us on WhatsApp.",
+      "ogTitle": "FixPoint – repairs right at your home",
+      "seoH": "Phone & computer repair in Liechtenstein",
+      "seoP": "FixPoint repairs phones, tablets, laptops and computers right at your home: in Eschen, Vaduz, Schaan, Balzers, Mauren and across the Principality of Liechtenstein, as well as in Sargans and Buchs SG. Cracked screen, weak battery, water damage, viruses or a slow PC: you get a date and a price up front, and we explain everything clearly. On request we collect your device or help remotely.",
+      "indep": "FixPoint is an independent repair service and is not affiliated with Apple, Samsung, Google, Huawei, Xiaomi or any other manufacturer. All brands mentioned belong to their respective owners. Prices are indicative and confirmed before any repair."
     }
   },
   "est": {
     "phone": {
-      "screen": 199,
-      "battery": 99,
-      "port": 89,
-      "cam": 99,
-      "water": 119,
-      "sw": 79,
-      "data": 79,
-      "other": 49
+      "screen": 149,
+      "battery": 69,
+      "port": 69,
+      "cam": 79,
+      "water": 89,
+      "sw": 49,
+      "data": 49,
+      "other": 29
     },
     "tablet": {
-      "screen": 189,
-      "battery": 119,
-      "port": 99,
-      "water": 129,
-      "sw": 79,
-      "data": 79,
-      "other": 49
+      "screen": 139,
+      "battery": 89,
+      "port": 79,
+      "water": 99,
+      "sw": 49,
+      "data": 49,
+      "other": 29
     },
     "laptop": {
-      "screen": 249,
-      "battery": 139,
-      "key": 149,
-      "heat": 119,
-      "slow": 99,
-      "sw": 119,
-      "data": 79,
-      "boot": 99,
-      "other": 49
+      "screen": 199,
+      "battery": 99,
+      "key": 99,
+      "heat": 79,
+      "slow": 69,
+      "sw": 79,
+      "data": 49,
+      "boot": 69,
+      "other": 29
     },
     "pc": {
-      "slow": 99,
-      "sw": 119,
-      "heat": 99,
-      "data": 79,
-      "boot": 99,
-      "other": 49
+      "slow": 69,
+      "sw": 79,
+      "heat": 69,
+      "data": 49,
+      "boot": 69,
+      "other": 29
     },
     "extra": {
-      "far": 25,
-      "express": 49
+      "far": 20,
+      "express": 29
     }
-  }
+  },
+  "seo": {
+    "site": "https://fixpoint.li",
+    "gsc": ""
+  },
+  "email": "info@fixpoint.li"
 }
