@@ -25,13 +25,16 @@ const wheres = [{ label: t.whereLi, st: s.where === 'li' ? on : off, pick: () =>
 const extra = `${t.lW}: ${s.where === 'far' ? farLabel : t.whereLi}${s.express ? '\n' + t.express : ''}\n${t.estH}: ${t.from} CHF ${total}`;
 const brandsAll = [...new Set(Object.values(DEV).flatMap((x) => Object.keys(x.b)).filter((b) => !/Other|Andere/.test(b)))];
 const marq = [...brandsAll, ...brandsAll].map((n) => ({ n }));
+const na = t.h1a.split(' ').filter(Boolean).length;
+const h1w = (t.h1a + ' ' + t.h1b).split(' ').filter(Boolean).map((w, i) => ({ t: w, cls: i >= na ? 'gt' : '', d: (0.1 + i * 0.08).toFixed(2) + 's' }));
+const svc = t.svc.map((x, i) => ({ a: x.a, b: x.b, i0: i === 0, i1: i === 1, i2: i === 2, i3: i === 3, i4: i === 4, i5: i === 5 }));
 const ready = s.dev && s.brand && fx;
 const parts = ready ? [d.l[L], s.brand, tr(s.model), fx].filter(Boolean) : [];
 const msg = ready ? `${t.hi}\n${t.lD}: ${d.l[L]}\n${t.lB}: ${s.brand}\n${s.model ? t.lM + ': ' + tr(s.model) + '\n' : ''}${t.lF}: ${fx}\n${extra}` : t.hi;
 const num = PHONE.replace(/[^\d]/g, '');
 return {
 t, devs, brands, models, fixes, PHONE, places: PLACES.map((n) => ({ n })),
-hasDev: !!s.dev, stepFix: models.length > 0 ? 4 : 3, stepWhere: (models.length > 0 ? 4 : 3) + 1, wheres, segs, marq, estText: total > 0 ? `${t.from} CHF ${total}` : '—', expAria: String(s.express), expSt: s.express ? TGON : '', expLed: s.express ? LEDON : LEDOFF, expKn: s.express ? KNON : '', expPrice: X.express || 0, toggleExp: () => this.setState((p) => ({ express: !p.express })), hasModels: models.length > 0, summary: ready ? parts.join(' · ') : t.none,
+h1w, svc, farLabel, hasDev: !!s.dev, stepFix: models.length > 0 ? 4 : 3, stepWhere: (models.length > 0 ? 4 : 3) + 1, wheres, segs, marq, estText: total > 0 ? `${t.from} CHF ${total}` : '—', expAria: String(s.express), expSt: s.express ? TGON : '', expLed: s.express ? LEDON : LEDOFF, expKn: s.express ? KNON : '', expPrice: X.express || 0, toggleExp: () => this.setState((p) => ({ express: !p.express })), hasModels: models.length > 0, summary: ready ? parts.join(' · ') : t.none,
 waLink: `https://wa.me/${num}?text=${encodeURIComponent(msg)}`, waBase: `https://wa.me/${num}`, telLink: `tel:+${num}`,
 deSt: s.lang === 'de' ? 'background:#3EE6C3;color:#04211C' : 'background:transparent',
 enSt: s.lang === 'en' ? 'background:#3EE6C3;color:#04211C' : 'background:transparent',
@@ -41,6 +44,9 @@ setDe: () => this.setState({ lang: 'de' }), setEn: () => this.setState({ lang: '
 }
 
 document.addEventListener('pointermove', (e) => {
+  const rs = document.documentElement.style;
+  rs.setProperty('--px', e.clientX + 'px');
+  rs.setProperty('--py', e.clientY + 'px');
   const t = e.target.closest && e.target.closest('.card,.dev');
   if (!t) return;
   const r = t.getBoundingClientRect();

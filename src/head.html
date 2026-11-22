@@ -61,4 +61,53 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 @keyframes ring{0%{box-shadow:0 6px 24px #3EE6C340,0 0 0 0 #3EE6C380}70%,100%{box-shadow:0 6px 24px #3EE6C340,0 0 0 16px #3EE6C300}}
 @supports (animation-timeline:view()){.sec:not(.hero){animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 30%}}
 @media(prefers-reduced-motion:reduce){.mq>div,.wa,.sec{animation:none!important}.tg .kn,.led,.seg{transition:none}}
+
+/* animated hero + extras */
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(460px circle at var(--px,70%) var(--py,20%),#3EE6C322,transparent 60%)}
+.hero>*{position:relative}
+.wd{display:inline-block;animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.gt{background-size:200% auto}
+.wd.gt{animation:rise .8s cubic-bezier(.2,.8,.2,1) both,shine 6s linear infinite}
+.p{position:relative;overflow:hidden}
+.p::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,#ffffff55,transparent);transform:skewX(-20deg);transition:left .6s}
+.p:hover::after{left:130%}
+.sp{display:none}
+@supports (animation-timeline:scroll()){.sp{display:block;position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:linear-gradient(90deg,#3EE6C3,#8B7CFF);transform-origin:0 50%;transform:scaleX(0);animation:spg linear both;animation-timeline:scroll(root)}}
+.stage svg{transition:transform .2s ease-out;transform:translate(calc((var(--px,50vw) - 50vw) / -70),calc((var(--py,40vh) - 40vh) / -70))}
+.bdg{position:absolute;z-index:2;display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#111823e6;border:1px solid #2A394C;font:500 13px Geist,Inter,sans-serif;animation:fl 5s ease-in-out infinite;backdrop-filter:blur(6px)}
+.bdg i{width:7px;height:7px;border-radius:50%;background:#3EE6C3;box-shadow:0 0 8px #3EE6C3}
+.orb{transform-origin:240px 210px;animation:spin 28s linear infinite}
+.fl1{animation:fl 6s ease-in-out infinite}.fl2{animation:fl 7s ease-in-out -2s infinite}
+.pb{transform-origin:26px 78px;animation:pb 8s ease-in-out infinite}
+.cur{animation:blink 1s steps(2) infinite}
+.crack{fill:none;stroke:#E8EEF5;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;animation:ck1 8s infinite}
+.scan{opacity:0;animation:scn 8s infinite}
+.heal{opacity:0;animation:hl 8s infinite}
+.ck{stroke-dasharray:100;stroke-dashoffset:100;opacity:0;animation:ck2 8s infinite}
+.ring{opacity:0;transform-origin:240px 214px;animation:rg 8s infinite}
+.spk{opacity:0;animation:spk 8s infinite}
+.pt{animation:pt 5s ease-in infinite}
+.ic{display:block;margin-bottom:14px;transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+.card:hover .ic{transform:translateY(-4px) rotate(-6deg) scale(1.08)}
+.spoke{stroke:#33445A;stroke-width:1.5;stroke-dasharray:4 7;animation:dash 1.6s linear infinite}
+.spoke.far{stroke:#8B7CFF88}
+.np{fill:none;stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:np 2.4s ease-out infinite}
+.lg{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+@keyframes shine{to{background-position:200% center}}
+@keyframes spg{to{transform:scaleX(1)}}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes blink{50%{opacity:0}}
+@keyframes pb{0%{transform:scaleX(.08)}60%{transform:scaleX(.9)}75%,95%{transform:scaleX(1)}100%{transform:scaleX(.08)}}
+@keyframes ck1{0%{stroke-dashoffset:100;opacity:1}10%{stroke-dashoffset:0;opacity:1}40%{stroke-dashoffset:0;opacity:1}54%{opacity:0}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes scn{0%,38%{opacity:0;transform:translateY(-10px)}40%{opacity:1;transform:translateY(-10px)}57%{opacity:1;transform:translateY(215px)}59%,100%{opacity:0;transform:translateY(215px)}}
+@keyframes hl{0%,60%{opacity:0}70%,95%{opacity:.16}100%{opacity:0}}
+@keyframes ck2{0%,60%{stroke-dashoffset:100;opacity:0}61%{opacity:1;stroke-dashoffset:100}73%{stroke-dashoffset:0;opacity:1}93%{stroke-dashoffset:0;opacity:1}98%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes rg{0%,61%{opacity:0;transform:scale(.4)}63%{opacity:.9;transform:scale(.4)}80%,100%{opacity:0;transform:scale(1.5)}}
+@keyframes spk{0%,60%{opacity:0}66%{opacity:1}80%,100%{opacity:0}}
+@keyframes pt{0%{transform:translateY(0);opacity:0}25%{opacity:.9}100%{transform:translateY(-90px);opacity:0}}
+@keyframes dash{to{stroke-dashoffset:-22}}
+@keyframes np{0%{transform:scale(1);opacity:.8}100%{transform:scale(3);opacity:0}}
+@media(prefers-reduced-motion:reduce){.stage *,.wd,.sp,.spoke,.np,.bdg{animation:none!important}.stage svg{transform:none}.stage .crack{opacity:0}.stage .ck{opacity:1;stroke-dashoffset:0}.stage .heal{opacity:.12}}
 </style>
