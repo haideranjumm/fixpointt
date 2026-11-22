@@ -66,7 +66,8 @@ function areas() {
 }
 function contact() {
   return el('div', {}, el('p', { class: 'hint' }, 'The phone number is used for the call button, WhatsApp and the footer. Keep the international format.'),
-    el('div', { class: 'card' }, field('Phone / WhatsApp', text(data, 'phone'))),
+    el('div', { class: 'card' }, el('div', { class: 'grid' }, field('Phone / WhatsApp', text(data, 'phone')), field('Email', text(data, 'email')))),
+    (data.seo = data.seo || {}, el('div', { class: 'card' }, el('h3', {}, 'Google Search Console'), field('Verification code (optional, the content value of the google-site-verification meta tag)', text(data.seo, 'gsc')))),
     el('div', { class: 'card' }, el('div', { class: 'grid2' }, field('Availability (German)', text(data.T.de, 'hours')), field('Availability (English)', text(data.T.en, 'hours')))));
 }
 function devices() {

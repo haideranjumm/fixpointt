@@ -16,6 +16,7 @@ function validate(c) {
   if (!c || typeof c !== 'object') throw new Error('Invalid content');
   for (const k of ['phone', 'places', 'fix', 'devices', 'T']) if (!(k in c)) throw new Error('Missing section: ' + k);
   if (typeof c.phone !== 'string' || !/^[+\d][\d\s()-]{5,25}$/.test(c.phone)) throw new Error('Phone number looks invalid');
+  if ('email' in c && (typeof c.email !== 'string' || !/^[^\s@<>"']+@[^\s@<>"']+\.[^\s@<>"']+$/.test(c.email))) throw new Error('Email address looks invalid');
   if (!Array.isArray(c.places) || !c.places.every((p) => typeof p === 'string')) throw new Error('Areas must be a list of names');
   if (!c.T.de || !c.T.en || JSON.stringify(Object.keys(c.T.de).sort()) !== JSON.stringify(Object.keys(c.T.en).sort())) throw new Error('German and English texts must have the same fields');
   if ('est' in c && (!c.est || typeof c.est !== 'object')) throw new Error('Estimates are invalid');

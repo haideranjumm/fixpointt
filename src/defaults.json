@@ -53,7 +53,13 @@
       "from": "ab",
       "lW": "Ort",
       "hubBase": "Unsere Basis",
-      "heroAlt": "Illustration: Ein Handy mit gesprungenem Display wird repariert"
+      "heroAlt": "Illustration: Ein Handy mit gesprungenem Display wird repariert",
+      "metaTitle": "Handy & PC Reparatur Liechtenstein – Hausbesuch | FixPoint",
+      "metaDesc": "Handy-, Laptop- und PC-Reparatur mit Hausbesuch in Liechtenstein, Sargans und Buchs SG. Hausbesuch in FL kostenlos, Preis vorab. Jetzt per WhatsApp anfragen.",
+      "ogTitle": "FixPoint – Reparatur direkt bei dir zu Hause",
+      "seoH": "Handy- & Computer-Reparatur in Liechtenstein",
+      "seoP": "FixPoint repariert Handys, Tablets, Laptops und Computer direkt bei dir zu Hause: in Eschen, Vaduz, Schaan, Balzers, Mauren und im ganzen Fürstentum Liechtenstein sowie in Sargans und Buchs SG. Ob gesprungenes Display, schwacher Akku, Wasserschaden, Virenbefall oder langsamer PC: Du erhältst Termin und Preis vorab, und wir erklären dir alles verständlich. Auf Wunsch holen wir dein Gerät ab oder helfen per Fernwartung.",
+      "indep": "FixPoint ist ein unabhängiger Reparaturdienst und nicht mit Apple, Samsung, Google, Huawei, Xiaomi oder anderen Herstellern verbunden. Alle genannten Marken gehören ihren jeweiligen Inhabern. Preise sind Richtpreise und werden vor der Reparatur verbindlich bestätigt."
     },
     "en": {
       "whereH": "Where should we come?",
@@ -64,7 +70,18 @@
       "from": "from",
       "lW": "Location",
       "hubBase": "Our base",
-      "heroAlt": "Illustration: a phone with a cracked screen being repaired"
+      "heroAlt": "Illustration: a phone with a cracked screen being repaired",
+      "metaTitle": "Phone & PC Repair Liechtenstein – Home Visits | FixPoint",
+      "metaDesc": "Phone, laptop and PC repair with home visits in Liechtenstein, Sargans and Buchs SG. Free home visits in FL, price up front. Message us on WhatsApp.",
+      "ogTitle": "FixPoint – repairs right at your home",
+      "seoH": "Phone & computer repair in Liechtenstein",
+      "seoP": "FixPoint repairs phones, tablets, laptops and computers right at your home: in Eschen, Vaduz, Schaan, Balzers, Mauren and across the Principality of Liechtenstein, as well as in Sargans and Buchs SG. Cracked screen, weak battery, water damage, viruses or a slow PC: you get a date and a price up front, and we explain everything clearly. On request we collect your device or help remotely.",
+      "indep": "FixPoint is an independent repair service and is not affiliated with Apple, Samsung, Google, Huawei, Xiaomi or any other manufacturer. All brands mentioned belong to their respective owners. Prices are indicative and confirmed before any repair."
     }
-  }
+  },
+  "seo": {
+    "site": "https://fixpoint.li",
+    "gsc": ""
+  },
+  "email": "info@fixpoint.li"
 }
